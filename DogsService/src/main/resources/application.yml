@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: dogs-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dogs
+    username: dogs
+    password: dogs
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8000
