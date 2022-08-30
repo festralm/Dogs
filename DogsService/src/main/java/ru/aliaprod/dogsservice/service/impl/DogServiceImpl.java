@@ -4,6 +4,7 @@ import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.aliaprod.dogsservice.exception.DataNotFoundException;
 import ru.aliaprod.dogsservice.model.Dog;
 import ru.aliaprod.dogsservice.repository.DogRepository;
@@ -32,5 +33,13 @@ public class DogServiceImpl implements DogService {
                                 messageSource.getMessage("exception.notFound.dog", null, Locale.getDefault())
                         )
                 );
+    }
+
+    @Override
+    @Transactional
+    public void increaseRatingById(Long id) {
+        Dog dog = getById(id);
+        Long rating = dog.getRating() + 1;
+        dog.setRating(rating);
     }
 }

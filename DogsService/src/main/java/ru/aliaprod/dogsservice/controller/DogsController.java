@@ -4,8 +4,10 @@ import lombok.Setter;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import ru.aliaprod.dogsservice.dto.DogDto;
 import ru.aliaprod.dogsservice.dto.DogListDto;
 import ru.aliaprod.dogsservice.service.DogService;
@@ -23,8 +25,6 @@ public class DogsController {
     private MapperUtils mapperUtils;
     @Setter(onMethod_ = @Autowired)
     private ModelMapper modelMapper;
-    @Autowired
-    private Environment environment;
 
     @GetMapping
     public List<DogListDto> listAll() {
@@ -33,8 +33,6 @@ public class DogsController {
 
     @GetMapping("/{id}")
     public DogDto getById(@PathVariable Long id) {
-        DogDto map = modelMapper.map(dogService.getById(id), DogDto.class);
-        map.setPort(environment.getProperty("local.server.port"));
-        return map;
+        return modelMapper.map(dogService.getById(id), DogDto.class);
     }
 }

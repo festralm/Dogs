@@ -1,9 +1,20 @@
 spring:
   application:
     name: vote-service
+  kafka:
+    producer:
+      client-id: vote
+
 server:
-  port: 8080
+  port: 8081
+
 eureka:
   client:
     service-url:
       default-zone: http://localhost:8761/eureka
+
+kafka:
+  topic:
+    dog: dog
+  group-id: vote
+  bootstrap-server: localhost:9092

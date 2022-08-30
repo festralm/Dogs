@@ -12,13 +12,20 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
+  kafka:
+    consumer:
+      group-id: dog
 
 server:
   port: 8000
-  instance:
-    id: 1
 
 eureka:
   client:
     service-url:
       default-zone: http://localhost:8761/eureka
+
+kafka:
+  topic:
+    dog: dog
+  group-id: dog
+  bootstrap-server: localhost:9092
