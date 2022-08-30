@@ -10,4 +10,5 @@ import lombok.*;
 public class DogDto {
     private Long id;
     private String photoUrl;
+    private String port;
 }
