@@ -68,6 +68,3 @@ build/
 
 # local files
 !/src/main/resources/application-local.yml
-
-*.lock
-*.bin
