@@ -1,0 +1,14 @@
+ru\aliaprod\voteservice\dto\DogDto$DogDtoBuilder.class
+ru\aliaprod\voteservice\exception\BadRequestException.class
+ru\aliaprod\voteservice\ServletInitializer.class
+ru\aliaprod\voteservice\config\MessageSourceConfig.class
+ru\aliaprod\voteservice\service\VoteService.class
+ru\aliaprod\voteservice\controller\ErrorHandler.class
+ru\aliaprod\voteservice\config\RestTemplateConfig.class
+ru\aliaprod\voteservice\dto\DogDto.class
+ru\aliaprod\voteservice\proxy\DogsServiceProxy.class
+ru\aliaprod\voteservice\dto\VoteDto$VoteDtoBuilder.class
+ru\aliaprod\voteservice\VoteServiceApplication.class
+ru\aliaprod\voteservice\controller\VoteController.class
+ru\aliaprod\voteservice\dto\VoteDto.class
+ru\aliaprod\voteservice\service\impl\VoteServiceImpl.class
